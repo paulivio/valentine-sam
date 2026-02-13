@@ -66,17 +66,21 @@ body {
   position: absolute;
   top: 20px;
   white-space: nowrap;
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 4vw, 2rem);
   font-weight: bold;
   color: white;
   text-shadow: 0 0 10px hotpink;
-  animation: marquee 10s linear infinite;
+
+  animation: marquee 12s linear infinite;
 }
 
 @keyframes marquee {
-  0% { left: -50%; }
-  100% { left: 100%; }
-  }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(100vw - 100%)); }
+animation: marquee 6s ease-in-out infinite alternate;
+
+}
+
 
 @keyframes travelUpDown {
   from {
